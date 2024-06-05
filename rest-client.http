@@ -10,6 +10,14 @@ GET http://localhost:3000/songs/1
 ### SEND FORM DATA
 
 POST http://localhost:3000/songs
+Content-Type: application/json
+
+{
+    "title": "Next Song",
+    "artists": ["New Artist0", "New Artist1"],
+    "releasedDate": "2024-09-29",
+    "duration": "07:34"
+}
 
 ### SEND FORM DATA
 
