@@ -1,4 +1,4 @@
- # Oussama Chercheri Portfolio Website
+# Oussama Chercheri Portfolio Website
 
 This repository contains the code for Oussama Chercheri's personal portfolio website. The website is built using HTML, CSS, JavaScript, and PHP.
 
