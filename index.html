@@ -22,6 +22,65 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <style>
+    .oilapp-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 80px 0;
+      color: white;
+    }
+
+    .oilapp-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      color: #333;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 30px 0;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      background: #000;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .tech-badge {
+      display: inline-block;
+      background: #667eea;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .feature-item {
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .feature-item:last-child {
+      border-bottom: none;
+    }
+
+    .feature-icon {
+      color: #667eea;
+      font-size: 24px;
+      margin-right: 15px;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -35,6 +94,7 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#oilapp">OilApp</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto " href="#work">Work</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
@@ -59,7 +119,6 @@
 
   <main id="main">
 
-
     <section id="about" class="about-mf sect-pt4 route">
       <div class="container">
         <div class="row">
@@ -78,7 +137,8 @@
                         <p><span class="title-s">Name: </span> <span>Oussema Chercheri</span></p>
                         <p><span class="title-s">Profile: </span> <span>Software engineer Student</span></p>
                         <p><span class="title-s">Email: </span> <span>oussama.chercheri@tek-up.de</span></p>
-                        <p><span class="title-s">Github: </span> <span><a href="https://github.com/OussemaChercheri">OussemaChercheri</a></span></p>
+                        <p><span class="title-s">Github: </span> <span><a
+                              href="https://github.com/OussemaChercheri">OussemaChercheri</a></span></p>
                         <p><span class="title-s">Phone: </span> <span>(+216) 22 011 057 </span></p>
                       </div>
                     </div>
@@ -88,15 +148,17 @@
                       <div class="col">
                         <h2>Skills</h2>
                         <h6>Frontend</h6>
-                        <p>Angular, React, bootstrap, tailwind css</p>
+                        <p>Angular, React, Flutter, Bootstrap, Tailwind CSS</p>
                         <h6>Backend</h6>
-                        <p>JAVA, Spring Boot, Node.js, Express</p>
+                        <p>JAVA, Spring Boot, Node.js, Express, Django, .NET</p>
                         <h6>Database</h6>
-                        <p>MySQL, MongoDB, PostgreSql</p>
+                        <p>MySQL, MongoDB, PostgreSQL</p>
+                        <h6>AI & ML</h6>
+                        <p>Machine Learning, Random Forest, Gradient Boosting</p>
                       </div>
                     </div>
                   </div>
-                  
+
                 </div>
                 <div class="col-md-6">
                   <div class="about-me pt-4 pt-md-0">
@@ -124,6 +186,141 @@
         </div>
       </div>
     </section>
+
+    <!-- OilApp Featured Section -->
+    <section id="oilapp" class="oilapp-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="oilapp-card">
+              <div class="text-center mb-4">
+                <h2 class="display-4" style="color: #667eea; font-weight: bold;">
+                  <i class="bi bi-droplet-fill"></i> OilApp
+                </h2>
+                <p class="lead">Multi-Platform Application for Optimizing Olive Oil Production Processes</p>
+                <p class="text-muted">Final Year Project | 4inTechnologie | February 2025 - August 2025</p>
+              </div>
+
+              <!-- Video Demo -->
+              <div class="video-container">
+                <video controls preload="metadata" poster="assets/img/oilapp-thumbnail.jpg">
+                  <source src="assets/videos/oilapp-demo.mp4" type="video/mp4">
+                  <source src="assets/videos/oilapp-demo.webm" type="video/webm">
+                  <p>Your browser doesn't support HTML5 video. <a href="assets/videos/oilapp-demo.mp4">Download the
+                      video</a> instead.</p>
+                </video>
+              </div>
+
+              <!-- Project Description -->
+              <div class="row mt-5">
+                <div class="col-md-12">
+                  <h4 style="color: #667eea;">
+                    <i class="bi bi-info-circle"></i> About the Project
+                  </h4>
+                  <p class="lead">
+                    OilApp is a comprehensive multi-platform application dedicated to digitalizing Tunisian olive oil
+                    mills.
+                    This innovative solution transforms traditional olive oil production processes through advanced
+                    technology
+                    and artificial intelligence.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Key Features -->
+              <div class="row mt-4">
+                <div class="col-md-6">
+                  <h4 style="color: #667eea;">
+                    <i class="bi bi-star-fill"></i> Key Features
+                  </h4>
+                  <div class="feature-item">
+                    <i class="bi bi-check-circle-fill feature-icon"></i>
+                    <strong>Electronic Weighing System:</strong> Automated weight tracking and management
+                  </div>
+                  <div class="feature-item">
+                    <i class="bi bi-check-circle-fill feature-icon"></i>
+                    <strong>Digital Invoicing:</strong> Streamlined billing and payment processing
+                  </div>
+                  <div class="feature-item">
+                    <i class="bi bi-check-circle-fill feature-icon"></i>
+                    <strong>Customer Tracking:</strong> Comprehensive client relationship management
+                  </div>
+                  <div class="feature-item">
+                    <i class="bi bi-check-circle-fill feature-icon"></i>
+                    <strong>AI-Powered Energy Optimization:</strong> Predict costs and resource consumption
+                  </div>
+                  <div class="feature-item">
+                    <i class="bi bi-check-circle-fill feature-icon"></i>
+                    <strong>Machine Learning Algorithms:</strong> Random Forest & Gradient Boosting with R² = 0.95
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <h4 style="color: #667eea;">
+                    <i class="bi bi-graph-up"></i> Technical Achievements
+                  </h4>
+                  <ul class="list-unstyled">
+                    <li class="mb-3">
+                      <i class="bi bi-lightning-fill" style="color: #ffc107;"></i>
+                      <strong>95% Accuracy:</strong> Energy consumption prediction model
+                    </li>
+                    <li class="mb-3">
+                      <i class="bi bi-speedometer2" style="color: #28a745;"></i>
+                      <strong>Real-time Processing:</strong> Instant data analysis and reporting
+                    </li>
+                    <li class="mb-3">
+                      <i class="bi bi-shield-check" style="color: #667eea;"></i>
+                      <strong>Secure Architecture:</strong> Enterprise-grade security implementation
+                    </li>
+                    <li class="mb-3">
+                      <i class="bi bi-phone" style="color: #17a2b8;"></i>
+                      <strong>Cross-Platform:</strong> Works seamlessly on mobile and web
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Technologies Used -->
+              <div class="row mt-5">
+                <div class="col-12">
+                  <h4 style="color: #667eea;">
+                    <i class="bi bi-code-slash"></i> Technologies Used
+                  </h4>
+                  <div class="text-center mt-3">
+                    <span class="tech-badge">Flutter</span>
+                    <span class="tech-badge">Django</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Machine Learning</span>
+                    <span class="tech-badge">Random Forest</span>
+                    <span class="tech-badge">Gradient Boosting</span>
+                    <span class="tech-badge">AI Optimization</span>
+                    <span class="tech-badge">RESTful API</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Impact -->
+              <div class="row mt-5">
+                <div class="col-12">
+                  <div class="alert alert-info">
+                    <h5><i class="bi bi-lightbulb"></i> Project Impact</h5>
+                    <p class="mb-0">
+                      OilApp revolutionizes the olive oil industry in Tunisia by providing mill owners with
+                      intelligent tools for cost optimization, process automation, and data-driven decision making.
+                      The AI-powered energy prediction system helps reduce operational costs while improving
+                      production efficiency.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="services" class="services-mf pt-5 route">
       <div class="container">
         <div class="row">
@@ -217,7 +414,7 @@
                     </div>
                   </div>
                   <div class="col-sm-4">
-    
+
                     <div class="w-like">
                       <a href="https://oussemachercheri.github.io/" target="_blank" class="btn">Link</a>
                     </div>
@@ -235,9 +432,12 @@
               </a>
               <div class="work-content">
                 <p>
-                The e-learning project, developed using Angular and Spring Boot, represents a dynamic and interactive online
-                education platform designed to revolutionize the learning experience. In an era where digital education is becoming
-                increasingly integral, this project seeks to address the evolving needs of learners and educators alike
+                  The e-learning project, developed using Angular and Spring Boot, represents a dynamic and interactive
+                  online
+                  education platform designed to revolutionize the learning experience. In an era where digital
+                  education is becoming
+                  increasingly integral, this project seeks to address the evolving needs of learners and educators
+                  alike
                 </p>
                 <div class="row">
                   <div class="col-sm-8">
@@ -265,12 +465,14 @@
                 </div>
               </a>
               <div class="work-content">
-                <p>The proposed solution involves the creation of a website called 'Annestouna' using Node.js for the backend and Angular for the frontend, with MongoDB.</p>
+                <p>The proposed solution involves the creation of a website called 'Annestouna' using Node.js for the
+                  backend and Angular for the frontend, with MongoDB.</p>
                 <div class="row">
                   <div class="col-sm-8">
                     <h2 class="w-title">Annestouna</h2>
                     <div class="w-more">
-                      <span class="w-ctegory">Tourestic services platform</span> / <span class="w-date">18 Sep. 2018</span>
+                      <span class="w-ctegory">Tourestic services platform</span> / <span class="w-date">18 Sep.
+                        2018</span>
                     </div>
                   </div>
                   <div class="col-sm-4">
@@ -294,9 +496,9 @@
               <div class="work-content">
                 <p>
                   Spectra is an open-world adventure game built using the Godot engine,
-                   integrating blockchain technology to offer players real asset ownership
-                    and a decentralized in-game economy. Explore, complete missions, earn Ethereum,
-                     and interact with other players in a dynamic marketplace. 
+                  integrating blockchain technology to offer players real asset ownership
+                  and a decentralized in-game economy. Explore, complete missions, earn Ethereum,
+                  and interact with other players in a dynamic marketplace.
                 </p>
                 <div class="row">
                   <div class="col-sm-8">
@@ -322,11 +524,14 @@
                 </div>
                 <div class="work-content">
                   <p>
-                  This project is dedicated to managing various entities related to a car rental agency developed in JAVA.
-                  I have acquired technical skills related to programming in Java, including the use of the Swing library to create graphical user interfaces (GUIs), implementing data structures, and developing algorithms to solve problems.
-                  This project includes the following applications: Java, Java Swing, MySQL.
+                    This project is dedicated to managing various entities related to a car rental agency developed in
+                    JAVA.
+                    I have acquired technical skills related to programming in Java, including the use of the Swing
+                    library to create graphical user interfaces (GUIs), implementing data structures, and developing
+                    algorithms to solve problems.
+                    This project includes the following applications: Java, Java Swing, MySQL.
                   </p>
-              </div>
+                </div>
               </a>
               <div class="work-content">
                 <div class="row">
@@ -337,9 +542,10 @@
                     </div>
                     <div class="col-sm-4">
                       <div class="w-like">
-                          <a href="https://github.com/OussemaChercheri/Java-Swing-Rent-Car-Managment.git" target="_blank" class="btn">GitHub</a>
+                        <a href="https://github.com/OussemaChercheri/Java-Swing-Rent-Car-Managment.git" target="_blank"
+                          class="btn">GitHub</a>
                       </div>
-                  </div>
+                    </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="w-like">
@@ -372,7 +578,8 @@
                   </div>
                   <div class="col-sm-4">
                     <div class="w-like">
-                      <a href="https://github.com/OussemaChercheri/JAVA-Swing_E-Commerce" target="_blank" class="btn">GitHub</a>
+                      <a href="https://github.com/OussemaChercheri/JAVA-Swing_E-Commerce" target="_blank"
+                        class="btn">GitHub</a>
                     </div>
                   </div>
                 </div>
@@ -382,8 +589,10 @@
 
         </div>
       </div>
-    </section><!-- End Portfolio Section -->
-    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(assets/img/overlay-bg.jpg)">
+    </section>
+
+    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route"
+      style="background-image: url(assets/img/overlay-bg.jpg)">
       <div class="overlay-mf"></div>
       <div class="container">
         <div class="row">
@@ -402,22 +611,26 @@
                         <div class="row">
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                required>
                             </div>
                           </div>
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                                required>
                             </div>
                           </div>
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                                required>
                             </div>
                           </div>
                           <div class="col-md-12">
                             <div class="form-group">
-                              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                              <textarea class="form-control" name="message" rows="5" placeholder="Message"
+                                required></textarea>
                             </div>
                           </div>
                           <div class="col-md-12 text-center my-3">
@@ -441,9 +654,9 @@
                     <div class="more-info">
                       <p class="lead">
                         Whether you have a project idea, a collaboration opportunity, or just want to connect, feel free
-                          to reach out. I’m always excited to discuss innovative ideas, provide assistance,
-                          or explore new possibilities in the world of software development. 
-                          Let's build something great together!
+                        to reach out. I'm always excited to discuss innovative ideas, provide assistance,
+                        or explore new possibilities in the world of software development.
+                        Let's build something great together!
                       </p>
                       <ul class="list-ico">
                         <li><span class="bi bi-geo-alt"></span> Ariana, Tunisie</li>
@@ -453,9 +666,12 @@
                     </div>
                     <div class="socials">
                       <ul>
-                        <li><a href="https://www.facebook.com/oussema.chercheri.9"><span class="ico-circle"><i class="bi bi-facebook"></i></span></a></li>
-                        <li><a href="https://www.instagram.com/chercherioussema/"><span class="ico-circle"><i class="bi bi-instagram"></i></span></a></li>
-                        <li><a href="https://www.linkedin.com/in/chercheri-oussema-807213218/"><span class="ico-circle"><i class="bi bi-linkedin"></i></span></a></li>
+                        <li><a href="https://www.facebook.com/oussema.chercheri.9"><span class="ico-circle"><i
+                                class="bi bi-facebook"></i></span></a></li>
+                        <li><a href="https://www.instagram.com/chercherioussema/"><span class="ico-circle"><i
+                                class="bi bi-instagram"></i></span></a></li>
+                        <li><a href="https://www.linkedin.com/in/chercheri-oussema-807213218/"><span
+                              class="ico-circle"><i class="bi bi-linkedin"></i></span></a></li>
                       </ul>
                     </div>
                   </div>
@@ -465,9 +681,9 @@
           </div>
         </div>
       </div>
-    </section><!-- End Contact Section -->
+    </section>
 
-  </main><!-- End #main -->
+  </main>
 
   <!-- ======= Footer ======= -->
   <footer>
@@ -483,10 +699,11 @@
       </div>
     </div>
   </footer>
-  
+
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
