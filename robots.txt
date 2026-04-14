@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://oussemachercheri.github.io/sitemap.xml
+Sitemap: https://oussema-chercheri.github.io/sitemap.xml
