@@ -67,6 +67,9 @@
 
     /* ── Container ────────────────────────────────────────── */
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    @media(max-width:480px) {
+      .container { padding: 0 16px; }
+    }
 
     /* ══════════════════════════════════════════════════════
        NAV
@@ -79,6 +82,9 @@
       border-bottom: 1px solid var(--border);
       display: flex; align-items: center; justify-content: space-between;
       height: 60px;
+    }
+    @media(max-width:480px) {
+      nav { padding: 0 16px; }
     }
     .nav-logo {
       font-family: var(--font-display);
@@ -98,8 +104,48 @@
     .nav-links a:hover { color: var(--text-1); }
     .nav-links a.active { color: var(--accent); }
 
+    /* Mobile menu button */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 4px;
+      transition: background .2s;
+    }
+    .nav-toggle:hover { background: rgba(255,255,255,.05); }
+    .nav-toggle span {
+      width: 20px; height: 2px;
+      background: var(--text-1);
+      transition: all .3s;
+      transform-origin: center;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
     @media(max-width:640px) {
-      .nav-links { display: none; }
+      .nav-links {
+        position: fixed; top: 60px; left: 0; right: 0;
+        flex-direction: column; gap: 0;
+        background: rgba(10,10,15,.95);
+        backdrop-filter: blur(16px) saturate(1.4);
+        border-bottom: 1px solid var(--border);
+        max-height: 0; overflow: hidden;
+        transition: max-height .3s ease;
+      }
+      .nav-links.open {
+        max-height: 300px;
+      }
+      .nav-links a {
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--border);
+        display: block;
+      }
+      .nav-toggle { display: flex; }
     }
 
     /* ══════════════════════════════════════════════════════
@@ -111,6 +157,9 @@
       padding: 120px 0 80px;
       position: relative;
       overflow: hidden;
+    }
+    @media(max-width:768px) {
+      .hero { padding: 100px 0 60px; }
     }
 
     /* Subtle grid background */
@@ -325,6 +374,9 @@
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 10px; margin-top: 20px;
     }
+    @media(max-width:480px) {
+      .about-meta { grid-template-columns: 1fr; }
+    }
     .about-meta-item {
       padding: 12px; background: var(--bg-card);
       border: 1px solid var(--border); border-radius: var(--radius-sm);
@@ -453,6 +505,9 @@
     }
     @media(max-width:640px) {
       .stats-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media(max-width:480px) {
+      .stats-grid { grid-template-columns: 1fr; }
     }
     .stat-cell {
       background: var(--bg-elevated); padding: 24px 20px;
@@ -751,6 +806,11 @@
       display: flex; align-items: center; justify-content: space-between;
       width: 100%; flex-wrap: wrap; gap: 16px;
     }
+    @media(max-width:640px) {
+      .footer-inner {
+        flex-direction: column; text-align: center; gap: 20px;
+      }
+    }
     .footer-name {
       font-family: var(--font-display); font-weight: 800; font-size: 14px;
       color: var(--text-2); letter-spacing: -.01em;
@@ -778,6 +838,9 @@
       font-size: 18px; transition: border-color .2s, color .2s, transform .2s;
       opacity: 0; pointer-events: none;
     }
+    @media(max-width:480px) {
+      .back-top { bottom: 16px; right: 16px; }
+    }
     .back-top.visible { opacity: 1; pointer-events: auto; }
     .back-top:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
@@ -796,12 +859,17 @@
   <!-- ═══ NAV ═══════════════════════════════════════════════ -->
   <nav>
     <a href="#hero" class="nav-logo">OC<span>.</span></a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="#about" class="active">About</a></li>
       <li><a href="#oilapp">OilApp</a></li>
       <li><a href="#work">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <!-- ═══ HERO ══════════════════════════════════════════════ -->
@@ -1379,6 +1447,22 @@
   </a>
 
   <script>
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    // Close mobile menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+
     // Back to top visibility
     const backTop = document.getElementById('backTop');
     window.addEventListener('scroll', () => {
@@ -1387,11 +1471,11 @@
 
     // Active nav link on scroll
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navLinkElements = document.querySelectorAll('.nav-links a');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          navLinks.forEach(l => l.classList.remove('active'));
+          navLinkElements.forEach(l => l.classList.remove('active'));
           const link = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
           if (link) link.classList.add('active');
         }
